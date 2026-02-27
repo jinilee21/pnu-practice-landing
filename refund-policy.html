@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>환불 규정 - 부산대 연습실 예약</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f2f2f7;
+            color: #1c1c1e;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #007AFF, #5856D6);
+            color: white;
+            padding: 48px 24px 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            font-size: 14px;
+            opacity: 0.85;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin: 24px auto 0;
+            padding: 0 24px;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .back-link a {
+            color: #007AFF;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 16px auto 40px;
+            padding: 0 24px;
+        }
+
+        .content {
+            background: white;
+            border-radius: 16px;
+            padding: 40px 32px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1c1c1e;
+            margin-top: 36px;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #007AFF;
+        }
+
+        h2:first-child {
+            margin-top: 0;
+        }
+
+        h3 {
+            font-size: 17px;
+            font-weight: 600;
+            color: #3a3a3c;
+            margin-top: 24px;
+            margin-bottom: 12px;
+        }
+
+        p {
+            margin-bottom: 12px;
+            font-size: 15px;
+            color: #3a3a3c;
+        }
+
+        ul {
+            margin-bottom: 12px;
+            padding-left: 24px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            font-size: 15px;
+            color: #3a3a3c;
+        }
+
+        li strong {
+            color: #1c1c1e;
+        }
+
+        .highlight {
+            background: #f0f4ff;
+            border-left: 4px solid #007AFF;
+            padding: 16px 20px;
+            border-radius: 0 12px 12px 0;
+            margin: 16px 0;
+        }
+
+        .highlight p {
+            margin-bottom: 0;
+            color: #1c1c1e;
+        }
+
+        .formula {
+            background: #f2f2f7;
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin: 12px 0;
+            font-family: 'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+            font-size: 14px;
+            color: #1c1c1e;
+            text-align: center;
+        }
+
+        .contact-card {
+            background: #f0f4ff;
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin: 16px 0;
+        }
+
+        .contact-card p {
+            margin-bottom: 6px;
+            color: #1c1c1e;
+        }
+
+        .contact-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 24px;
+            font-size: 13px;
+            color: #8e8e93;
+        }
+
+        @media (max-width: 600px) {
+            .header {
+                padding: 36px 16px 28px;
+            }
+
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .content {
+                padding: 28px 20px;
+            }
+
+            .container {
+                padding: 0 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>환불 규정</h1>
+        <p>부산대 연습실 예약</p>
+    </div>
+
+    <div class="back-link">
+        <a href="index.html">&larr; 돌아가기</a>
+    </div>
+
+    <div class="container">
+        <div class="content">
+
+            <!-- 1. 환불 가능 조건 -->
+            <h2>1. 환불 가능 조건</h2>
+
+            <h3>전액 환불</h3>
+            <p>구독 결제 후 <strong>7일 이내</strong>에 서비스를 이용하지 않은 경우 전액 환불이 가능합니다.</p>
+
+            <h3>부분 환불 (일할 계산)</h3>
+            <p>구독 기간 중 환불을 요청하는 경우, <strong>잔여일 기준으로 일할 계산</strong>하여 환불합니다.</p>
+            <p>계산 방식:</p>
+            <div class="formula">
+                환불금액 = 결제금액 &times; (잔여일 / 전체 구독일)
+            </div>
+
+            <!-- 2. 환불 요청 방법 -->
+            <h2>2. 환불 요청 방법</h2>
+            <p>환불을 요청하시려면 아래 이메일로 연락해 주세요.</p>
+
+            <div class="contact-card">
+                <p><strong>이메일:</strong> jinilee21@naver.com</p>
+                <p><strong>제목:</strong> [환불 요청] 부산대 연습실 예약 구독</p>
+                <p><strong>내용:</strong> 가입 이메일, 결제일, 환불 사유</p>
+            </div>
+
+            <!-- 3. 환불 처리 기간 -->
+            <h2>3. 환불 처리 기간</h2>
+            <ul>
+                <li>환불 요청 접수 후 <strong>3~5영업일</strong> 이내에 처리됩니다.</li>
+                <li>카드사 사정에 따라 환불 반영까지 추가 시간이 소요될 수 있습니다.</li>
+            </ul>
+
+            <!-- 4. 환불 불가 사유 -->
+            <h2>4. 환불 불가 사유</h2>
+            <p>다음의 경우 환불이 불가합니다:</p>
+            <ul>
+                <li>구독 기간이 만료된 경우</li>
+                <li>서비스를 정상적으로 이용한 후 단순 변심인 경우 (7일 경과)</li>
+                <li>약관을 위반하여 이용이 제한된 경우</li>
+            </ul>
+
+            <!-- 5. 문의 -->
+            <h2>5. 문의</h2>
+            <p>환불 관련 문의사항이 있으시면 언제든지 연락해 주세요.</p>
+
+            <div class="contact-card">
+                <p><strong>이메일:</strong> jinilee21@naver.com</p>
+                <p><strong>전화:</strong> 070-8983-1946</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        &copy; 2026 마롱크앙소프트. All rights reserved.
+    </footer>
+</body>
+</html>
