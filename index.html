@@ -376,7 +376,8 @@
         amount: amount,
         buyer_name: '',
         buyer_email: '',
-        buyer_tel: ''
+        buyer_tel: '',
+        display: { card_quota: [2, 3] }
       }, function(response) {
         if (response.success) {
           alert('결제가 완료되었습니다.\n주문번호: ' + response.merchant_uid);
@@ -400,7 +401,8 @@
         customer_uid: customerUid,
         buyer_name: '',
         buyer_email: '',
-        buyer_tel: ''
+        buyer_tel: '',
+        display: { card_quota: [2, 3] }
       }, function(response) {
         if (response.success) {
           alert('카드 등록이 완료되었습니다.\n정기결제가 시작됩니다.');
