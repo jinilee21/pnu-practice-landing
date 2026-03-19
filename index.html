@@ -213,11 +213,13 @@
     <div class="section">
       <h2>이용권 안내</h2>
       <p class="section-desc">부산대학교 음악대학 피아노 연습실 자동 예약 서비스입니다. 이용권 구매 후 즉시 서비스가 시작됩니다.</p>
+      <!-- 일반결제 (1개월 이용권) -->
+      <h3 style="margin-top:20px; font-size:1.1em; color:#636366;">1개월 이용권 (일반결제)</h3>
       <div class="pricing">
         <div class="plan-card">
           <h3>Basic</h3>
           <div class="price">8,000원</div>
-          <div class="price-unit">/ 월 (30일)</div>
+          <div class="price-unit">/ 1개월</div>
           <div class="plan-period">결제일로부터 30일간 이용 가능</div>
           <ul class="plan-desc">
             <li>매일 1회 자동 예약</li>
@@ -229,12 +231,12 @@
             부산대 음악대학 피아노 연습실을 매일 오전 타임에 자동으로 1회 예약합니다.
             예약 결과는 앱 푸시 알림으로 안내됩니다.
           </p>
-          <button class="buy-btn" onclick="requestPayment('basic', 8000, 'Basic 이용권 (30일)')">구독하기</button>
+          <button class="buy-btn" onclick="requestPayment('basic', 8000, 'Basic 이용권 (30일)')">결제하기</button>
         </div>
         <div class="plan-card featured">
           <h3>Premium</h3>
           <div class="price">12,000원</div>
-          <div class="price-unit">/ 월 (30일)</div>
+          <div class="price-unit">/ 1개월</div>
           <div class="plan-period">결제일로부터 30일간 이용 가능</div>
           <ul class="plan-desc">
             <li>매일 2회 자동 예약</li>
@@ -247,8 +249,56 @@
             오전과 오후 타임 모두 자동 예약하여 하루 2회 연습실을 이용할 수 있습니다.
             우선 예약 지원으로 경쟁 시 유리합니다.
           </p>
-          <button class="buy-btn" onclick="requestPayment('premium', 12000, 'Premium 이용권 (30일)')">구독하기</button>
+          <button class="buy-btn" onclick="requestPayment('premium', 12000, 'Premium 이용권 (30일)')">결제하기</button>
         </div>
+      </div>
+
+      <!-- 정기결제 (연간 구독) -->
+      <h3 style="margin-top:32px; font-size:1.1em; color:#636366;">연간 구독 (정기결제 · 월 자동결제)</h3>
+      <div class="pricing">
+        <div class="plan-card">
+          <h3>Basic 연간</h3>
+          <div class="price">6,000원</div>
+          <div class="price-unit">/ 월 (자동결제)</div>
+          <div class="plan-period">매월 자동결제 · 연 72,000원 (25% 할인)</div>
+          <ul class="plan-desc">
+            <li>매일 1회 자동 예약</li>
+            <li>오전 타임 예약</li>
+            <li>푸시 알림</li>
+            <li>예약 현황 확인</li>
+          </ul>
+          <p class="plan-detail">
+            신용/체크카드를 등록하면 매월 자동으로 결제됩니다.
+            월간 결제 대비 25% 할인된 금액입니다.
+          </p>
+          <button class="buy-btn" onclick="requestBilling('basic_yearly', 6000, 'Basic 연간 구독')">정기결제 신청</button>
+        </div>
+        <div class="plan-card featured">
+          <h3>Premium 연간</h3>
+          <div class="price">10,000원</div>
+          <div class="price-unit">/ 월 (자동결제)</div>
+          <div class="plan-period">매월 자동결제 · 연 120,000원 (17% 할인)</div>
+          <ul class="plan-desc">
+            <li>매일 2회 자동 예약</li>
+            <li>오전 + 오후 타임 예약</li>
+            <li>푸시 알림</li>
+            <li>예약 현황 확인</li>
+            <li>우선 예약 지원</li>
+          </ul>
+          <p class="plan-detail">
+            신용/체크카드를 등록하면 매월 자동으로 결제됩니다.
+            월간 결제 대비 17% 할인된 금액입니다.
+          </p>
+          <button class="buy-btn" onclick="requestBilling('premium_yearly', 10000, 'Premium 연간 구독')">정기결제 신청</button>
+        </div>
+      </div>
+      <div style="background:white; border-radius:12px; padding:20px; margin-top:20px;">
+        <h4 style="font-size:1em; margin-bottom:10px;">결제 방식 안내</h4>
+        <ul style="font-size:0.9em; color:#636366; list-style:none; padding:0;">
+          <li style="margin:6px 0;">&#128179; <strong>일반결제 (1개월 이용권)</strong> — 신용/체크카드 일회성 결제</li>
+          <li style="margin:6px 0;">&#128257; <strong>정기결제 (연간 구독)</strong> — 신용/체크카드 월 자동결제 (빌링키 방식)</li>
+        </ul>
+        <p style="font-size:0.8em; color:#8e8e93; margin-top:10px;">본 서비스는 NHN KCP를 통한 일반결제 및 정기결제를 모두 지원합니다.</p>
       </div>
     </div>
 
@@ -301,10 +351,11 @@
   </div>
 
   <script>
-    function requestPayment(planId, amount, planName) {
-      var IMP = window.IMP;
-      IMP.init('imp25678806');
+    var IMP = window.IMP;
+    IMP.init('imp25678806');
 
+    // 일반결제 (1회 결제)
+    function requestPayment(planId, amount, planName) {
       var merchantUid = 'web_' + planId + '_' + Date.now();
 
       IMP.request_pay({
@@ -321,6 +372,30 @@
           alert('결제가 완료되었습니다.\n주문번호: ' + response.merchant_uid);
         } else {
           alert('결제가 취소되었습니다.\n' + (response.error_msg || ''));
+        }
+      });
+    }
+
+    // 정기결제 (빌링키 발급)
+    function requestBilling(planId, amount, planName) {
+      var customerUid = 'billing_web_' + Date.now();
+      var merchantUid = 'web_bill_' + planId + '_' + Date.now();
+
+      IMP.request_pay({
+        pg: 'kcp_billing.IP69K',
+        pay_method: 'card',
+        merchant_uid: merchantUid,
+        name: planName,
+        amount: 0,
+        customer_uid: customerUid,
+        buyer_name: '',
+        buyer_email: '',
+        buyer_tel: ''
+      }, function(response) {
+        if (response.success) {
+          alert('카드 등록이 완료되었습니다.\n정기결제가 시작됩니다.');
+        } else {
+          alert('카드 등록이 취소되었습니다.\n' + (response.error_msg || ''));
         }
       });
     }
